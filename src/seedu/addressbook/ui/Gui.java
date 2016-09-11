@@ -2,12 +2,14 @@ package seedu.addressbook.ui;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import seedu.addressbook.logic.Logic;
 import seedu.addressbook.Main;
 
 import java.io.File;
 import java.io.IOException;
+
 
 /**
  * The GUI of the App
@@ -39,6 +41,7 @@ public class Gui {
         loader.setLocation(Main.class.getResource("ui" + File.separator + "mainwindow.fxml"));
         stage.setTitle(version);
         stage.setScene(new Scene(loader.load(), INITIAL_WINDOW_WIDTH, INITIAL_WINDOW_HEIGHT));
+        stage.getIcons().add(new Image("file:src/seedu/addressbook/ui/icon.png"));
         stage.show();
         MainWindow mainWindow = loader.getController();
         mainWindow.setLogic(logic);
