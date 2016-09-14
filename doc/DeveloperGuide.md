@@ -44,7 +44,7 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | new user | see usage instructions | refer to instructions when I forget how to use the App
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
-`* * *` | user | list all persons in the address book | have a idea of people in my address book
+`* * *` | user | list all persons in the address book | have a idea of people in my address book so that I know who else I should add into this address book
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
 `* *` | user | clear the address book | avoid other people getting my information when I do not want to use this
 `* *` | user | hide [private contact details](#private-contact-detail) by default | to minimize chance of someone else seeing them by accident
@@ -80,17 +80,12 @@ Use case ends.
 
 **MSS**
 
-1. User requests to list persons
-2. AddressBook shows a list of persons
-3. User requests to edit a specific person in the list
-4. AddressBook shows all the details of a person
-5. User requests to edit a specific tag of the person
-6. AddressBook confirms with user delete/edit
-7. User confirms edit and enter the new tag
-8. AddressBook confirms with user
-9. User confirms
-10. AddressBook edits the tag as requested 
-11. AddressBook shows the user new details of the person
+1. User requests to list all tags
+2. AddressBook shows a list of tags
+3. User requests to edit a specific tag from 'a' to 'b'
+4. AddressBook confirms with user
+5. User confirms
+6. AddressBook shows the new list of tags
 Use case ends.
 
 **Extensions**
@@ -104,16 +99,10 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
-5a. The tag user wants to edit does not exist
+3b. The command user given is invalid
 
-> 5a1. AddressBook shows and error message <br>
-  Use case resumes at step 4
-
-7a. The command given by user is invalid
-	
-> 7a1. AddressBook shows an error message <br>
-  Use case resumes at step 6
-  
+> 3b1. AddressBook shows and error message <br>
+  Use case resumes at step 2
 
 ## Appendix C : Non Functional Requirements
 
@@ -126,8 +115,7 @@ Use case ends.
 7. Should work on a desktop without Internet connection.
 8. Should not use relational databases.
 9. Should store date locally in a human editable textfile.
-10. Should follow Object-oriented paradigm. 
-11. Should work without requiring an installer.
+10. Should work without requiring an installer.
 
 ## Appendix D : Glossary
 
